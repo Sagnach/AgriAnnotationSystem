@@ -1,0 +1,11 @@
+project:
+  name: AgriAnnotationSystem
+  version: 0.1.0
+
+annotation:
+  default_class: apple
+  auto_save: true
+
+ui:
+  host: 127.0.0.1
+  port: 7860

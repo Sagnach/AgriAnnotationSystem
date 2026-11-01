@@ -1,0 +1,134 @@
+{
+  "audit_version": "1.0",
+  "created_at": "2026-09-20T20:11:21.931712",
+  "status": "PASS",
+  "project_root": "C:\\Users\\wy131\\PycharmProjects\\PythonProject\\AgriAnnotationSystem",
+  "raw_root": "C:\\Users\\wy131\\PycharmProjects\\PythonProject\\AgriAnnotationSystem\\data\\raw\\minneapple",
+  "archive_directory": "C:\\Users\\wy131\\PycharmProjects\\PythonProject\\AgriAnnotationSystem\\data\\raw\\minneapple\\_archives",
+  "extracted_root": "C:\\Users\\wy131\\PycharmProjects\\PythonProject\\AgriAnnotationSystem\\data\\raw\\minneapple\\_extracted",
+  "archive_summaries": {
+    "detection": {
+      "archive": "detection.tar.gz",
+      "archive_size_bytes": 1825397590,
+      "archive_size": "1.70 GB",
+      "member_files": 1671,
+      "member_directories": 6,
+      "uncompressed_bytes": 1863653386,
+      "uncompressed_size": "1.74 GB",
+      "extensions": {
+        ".png": 1671
+      },
+      "integrity": "PASS",
+      "sha256": "40181ac98434eea2baa0ba850d41e48e1745029e7e73cb60013465703a815c67"
+    },
+    "test_data": {
+      "archive": "test_data.zip",
+      "archive_size_bytes": 1251569589,
+      "archive_size": "1.17 GB",
+      "member_files": 3871,
+      "member_directories": 8,
+      "uncompressed_bytes": 1262778668,
+      "uncompressed_size": "1.18 GB",
+      "extensions": {
+        ".jpg": 991,
+        ".json": 3,
+        ".png": 2877
+      },
+      "integrity": "PASS",
+      "sha256": "8f29ce93de98e704e3f679276d6bcf462161070c4c3f5147da19563a57064817"
+    }
+  },
+  "dataset_roots_found": 2,
+  "totals": {
+    "images": 1001,
+    "masks": 1001,
+    "paired_images_masks": 1001,
+    "apple_instances": 40468
+  },
+  "datasets": [
+    {
+      "dataset_root": "data\\raw\\minneapple\\_extracted\\detection\\detection\\train",
+      "split_hint": "train",
+      "image_count": 670,
+      "mask_count": 670,
+      "paired_count": 670,
+      "images_without_masks_count": 0,
+      "masks_without_images_count": 0,
+      "duplicate_image_stems": 0,
+      "duplicate_mask_stems": 0,
+      "corrupt_images": 0,
+      "corrupt_masks": 0,
+      "size_mismatches": 0,
+      "empty_masks": 0,
+      "masks_without_background": 0,
+      "unsupported_masks": 0,
+      "image_sizes": {
+        "720x1280": 670
+      },
+      "mask_modes": {
+        "L": 670
+      },
+      "total_instances": 28183,
+      "mean_instances_per_image": 42.064,
+      "median_instances_per_image": 39.0,
+      "min_instances_per_image": 1,
+      "max_instances_per_image": 123,
+      "images_without_masks": [],
+      "masks_without_images": [],
+      "corrupt_image_files": [],
+      "corrupt_mask_files": [],
+      "size_mismatch_details": [],
+      "empty_mask_files": [],
+      "missing_background_files": [],
+      "unsupported_mask_files": []
+    },
+    {
+      "dataset_root": "data\\raw\\minneapple\\_extracted\\test_data\\test_data\\segmentation",
+      "split_hint": "test",
+      "image_count": 331,
+      "mask_count": 331,
+      "paired_count": 331,
+      "images_without_masks_count": 0,
+      "masks_without_images_count": 0,
+      "duplicate_image_stems": 0,
+      "duplicate_mask_stems": 0,
+      "corrupt_images": 0,
+      "corrupt_masks": 0,
+      "size_mismatches": 0,
+      "empty_masks": 0,
+      "masks_without_background": 0,
+      "unsupported_masks": 0,
+      "image_sizes": {
+        "720x1280": 331
+      },
+      "mask_modes": {
+        "L": 331
+      },
+      "total_instances": 12285,
+      "mean_instances_per_image": 37.115,
+      "median_instances_per_image": 34,
+      "min_instances_per_image": 1,
+      "max_instances_per_image": 88,
+      "images_without_masks": [],
+      "masks_without_images": [],
+      "corrupt_image_files": [],
+      "corrupt_mask_files": [],
+      "size_mismatch_details": [],
+      "empty_mask_files": [],
+      "missing_background_files": [],
+      "unsupported_mask_files": []
+    }
+  ],
+  "preview_files": [
+    "outputs\\reports\\minneapple_audit\\previews\\preview_01_20150921_132245_image301.jpg",
+    "outputs\\reports\\minneapple_audit\\previews\\preview_02_20150919_174730_image31.jpg",
+    "outputs\\reports\\minneapple_audit\\previews\\preview_03_20150919_174151_image21.jpg",
+    "outputs\\reports\\minneapple_audit\\previews\\preview_04_dataset1_front_901.jpg",
+    "outputs\\reports\\minneapple_audit\\previews\\preview_05_20150921_131346_image736.jpg",
+    "outputs\\reports\\minneapple_audit\\previews\\preview_06_20150921_131346_image151.jpg",
+    "outputs\\reports\\minneapple_audit\\previews\\preview_07_20150921_131346_image1011.jpg",
+    "outputs\\reports\\minneapple_audit\\previews\\preview_08_20150919_174730_image581.jpg"
+  ],
+  "errors": [],
+  "warnings": []
+}

@@ -1,0 +1,10 @@
+dataset:
+  name: MinneApple
+
+paths:
+  raw: data/raw/minneapple
+  processed: data/processed/minneapple
+  split_file: data/splits/minneapple_split.csv
+
+classes:
+  1: apple

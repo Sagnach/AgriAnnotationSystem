@@ -1,0 +1,24 @@
+# Core
+numpy
+pandas
+pillow
+opencv-python
+pyyaml
+tqdm
+
+# Deep Learning
+torch
+torchvision
+
+# Evaluation
+scikit-learn
+pycocotools
+
+# UI
+gradio
+
+# Visualization
+matplotlib
+
+# SAM 3 dependencies should later be installed
+# according to the official SAM 3 repository.

@@ -1,0 +1,83 @@
+{
+  "smoke_test_version": "1.3",
+  "created_at": "2026-09-20T22:02:11.613446",
+  "status": "PASS",
+  "project_root": "C:\\Users\\wy131\\PycharmProjects\\PythonProject\\AgriAnnotationSystem",
+  "manifest": "data\\splits\\minneapple_split.csv",
+  "prompt": "apple",
+  "confidence_threshold": 0.5,
+  "requested_split": "val",
+  "errors": [],
+  "warnings": [],
+  "environment": {
+    "python_version": "3.12.10",
+    "python_executable": "C:\\Users\\wy131\\PycharmProjects\\PythonProject\\.venv312\\Scripts\\python.exe",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 198 Stepping 2, GenuineIntel",
+    "torch_version": "2.11.0+cu128",
+    "torchvision_version": "0.26.0+cu128",
+    "torch_cuda_version": "12.8",
+    "cuda_available": true,
+    "cudnn_version": 91900,
+    "cuda_device_index": 0,
+    "cuda_device_name": "NVIDIA GeForce RTX 5080 Laptop GPU",
+    "cuda_compute_capability": "12.0",
+    "cuda_total_memory_bytes": 17094475776,
+    "cuda_total_memory": "15.92 GB",
+    "bf16_supported": true
+  },
+  "device": "cuda",
+  "sample": {
+    "sample_id": "val_000104",
+    "split": "val",
+    "group_id": "20150921_131625",
+    "image_path": "data\\processed\\minneapple\\val\\images\\20150921_131625_image76.png",
+    "mask_path": "data\\processed\\minneapple\\val\\masks\\20150921_131625_image76.png",
+    "image_width": 720,
+    "image_height": 1280,
+    "ground_truth_instances": 40
+  },
+  "sam3_package": {
+    "sam3_version": "0.1.0",
+    "sam3_module_file": "C:\\Users\\wy131\\PycharmProjects\\PythonProject\\AgriAnnotationSystem\\third_party\\sam3\\sam3\\__init__.py",
+    "local_repo_detected": "C:\\Users\\wy131\\PycharmProjects\\PythonProject\\AgriAnnotationSystem\\third_party\\sam3"
+  },
+  "checkpoint": {
+    "source": "huggingface_auto",
+    "path": null,
+    "allow_hf_download": true
+  },
+  "inference": {
+    "prompt": "apple",
+    "confidence_threshold": 0.5,
+    "autocast": "cuda/bfloat16",
+    "model_load_seconds": 6.244318,
+    "inference_seconds": 0.552306,
+    "predicted_instances": 72,
+    "ground_truth_instances": 40,
+    "prediction_to_gt_count_ratio": 1.8,
+    "mask_shape": [
+      72,
+      1280,
+      720
+    ],
+    "boxes_shape": [
+      72,
+      4
+    ],
+    "scores_shape": [
+      72
+    ],
+    "score_min": 0.50390625,
+    "score_mean": 0.6927626132965088,
+    "score_max": 0.859375,
+    "cuda_peak_memory_bytes": 4282142208,
+    "cuda_peak_memory": "3.99 GB"
+  },
+  "outputs": {
+    "summary_json": "outputs\\reports\\sam3_smoke_test\\smoke_test_summary.json",
+    "prediction_metadata_csv": "outputs\\reports\\sam3_smoke_test\\prediction_metadata.csv",
+    "visualization": "outputs\\reports\\sam3_smoke_test\\sam3_smoke_test_visualization.jpg",
+    "prediction_masks_directory": null
+  }
+}

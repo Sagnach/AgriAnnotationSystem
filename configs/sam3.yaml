@@ -1,0 +1,10 @@
+model:
+  name: sam3
+  checkpoint_dir: models/sam3/checkpoints
+
+inference:
+  text_prompt: apple
+  confidence_threshold: 0.5
+
+device:
+  preferred: cuda

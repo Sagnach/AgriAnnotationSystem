@@ -1,0 +1,64 @@
+{
+  "prepare_version": "1.0",
+  "created_at": "2026-09-20T20:35:32.810460",
+  "status": "PASS",
+  "project_root": "C:\\Users\\wy131\\PycharmProjects\\PythonProject\\AgriAnnotationSystem",
+  "audit_summary": "outputs\\reports\\minneapple_audit\\audit_summary.json",
+  "audit_pair_csv": "outputs\\reports\\minneapple_audit\\image_mask_audit.csv",
+  "signature": {
+    "val_ratio": 0.2,
+    "seed": 42,
+    "materialize_mode": "copy",
+    "grouping": "acquisition_prefix_auto"
+  },
+  "official_source": {
+    "train_images": 670,
+    "test_images": 331,
+    "official_test_preserved": true
+  },
+  "grouping": {
+    "method": "acquisition_prefix_auto",
+    "num_training_groups": 10,
+    "num_validation_groups": 3,
+    "target_validation_images": 134,
+    "actual_validation_images": 134,
+    "train_val_group_overlap": 0
+  },
+  "splits": {
+    "train": {
+      "images": 536,
+      "instances": 22542,
+      "mean_instances_per_image": 42.056,
+      "groups": 7
+    },
+    "val": {
+      "images": 134,
+      "instances": 5641,
+      "mean_instances_per_image": 42.097,
+      "groups": 3
+    },
+    "test": {
+      "images": 331,
+      "instances": 12285,
+      "mean_instances_per_image": 37.115,
+      "groups": 0
+    }
+  },
+  "totals": {
+    "images": 1001,
+    "instances": 40468
+  },
+  "materialization": {
+    "mode": "copy",
+    "processed_root": "data\\processed\\minneapple",
+    "stats": {
+      "image_copy": 1001,
+      "mask_copy": 1001
+    }
+  },
+  "outputs": {
+    "manifest": "data\\splits\\minneapple_split.csv",
+    "group_manifest": "data\\splits\\minneapple_train_groups.csv",
+    "summary": "outputs\\reports\\minneapple_prepare\\prepare_summary.json"
+  }
+}
