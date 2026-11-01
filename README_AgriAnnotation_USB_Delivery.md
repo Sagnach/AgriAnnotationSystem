@@ -44,7 +44,7 @@ Expected essential files:
 ```text
 AgriAnnotationSystem/
 ├── README.md                     <-- this guide (rename on delivery)
-├── requirements_delivery.txt     <-- direct application dependencies
+├── requirements.txt     <-- direct application dependencies
 ├── scripts/
 │   └── 05_launch_annotation_app.py
 ├── src/
@@ -133,7 +133,7 @@ This **does not clone GitHub**. It installs the SAM 3 Python package using the s
 ### Step 6 — install the application and SAM 3 additional dependencies
 
 ```powershell
-.\.venv\Scripts\python.exe -m pip install -r requirements_delivery.txt
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
 ```
 
 The delivery requirements intentionally include dependencies that were needed by the working Windows SAM 3 import path but were not fully resolved by the base SAM 3 installation: **`einops`, `pycocotools`, `psutil`, and Windows Triton**. The file also includes Gradio 6 and core image processing packages.
@@ -209,7 +209,7 @@ Then open <http://127.0.0.1:7861>.
 An **offline deployment** needs more than copying the Python source. The sender must prepare, on a compatible Windows x64 + Python 3.12 environment:
 
 - A Python 3.12 installer (redistribution subject to its license).
-- A `wheelhouse/` containing compatible wheels **and all transitive dependencies** for CUDA PyTorch, `torchvision`, the SAM 3 source requirements, and `requirements_delivery.txt` (including `triton-windows`).
+- A `wheelhouse/` containing compatible wheels **and all transitive dependencies** for CUDA PyTorch, `torchvision`, the SAM 3 source requirements, and `requirements.txt` (including `triton-windows`).
 - The **complete** SAM 3 source directory and any additional assets required by the included revision.
 - An authorised, locally loadable `models/sam3/checkpoints/sam3.pt` (and any ancillary checkpoint assets needed by that revision).
 - The application source, README, sample image, and an export test.
@@ -217,7 +217,7 @@ An **offline deployment** needs more than copying the Python source. The sender 
 A possible online *preparation* step on the sender's compatible Windows computer is:
 
 ```powershell
-py -3.12 -m pip download -r requirements_delivery.txt -d wheelhouse
+py -3.12 -m pip download -r requirements.txt -d wheelhouse
 ```
 
 This command **alone is not sufficient** to bundle CUDA PyTorch or all SAM 3 build dependencies. The sender must also collect the selected CUDA torch/torchvision wheels, SAM 3 build dependencies, and verify the **entire** installation with network disabled. Pip editable installs can trigger build-isolation dependency retrieval unless the build dependencies are already installed locally.
@@ -225,7 +225,7 @@ This command **alone is not sufficient** to bundle CUDA PyTorch or all SAM 3 bui
 On the recipient computer, the offline application packages may then be installed with commands of this form **after** Python, pip, the compatible CUDA wheels, and build requirements are in place:
 
 ```powershell
-.\.venv\Scripts\python.exe -m pip install --no-index --find-links .\wheelhouse -r requirements_delivery.txt
+.\.venv\Scripts\python.exe -m pip install --no-index --find-links .\wheelhouse -r requirements.txt
 .\.venv\Scripts\python.exe -m pip install --no-index --no-build-isolation -e .\third_party\sam3
 ```
 
@@ -236,7 +236,7 @@ The exact offline sequence depends on the complete wheel inventory and must be v
 | Symptom | Likely cause | Corrective action |
 |---|---|---|
 | `No module named 'sam3'` | Official source not installed or wrong interpreter | Check `third_party/sam3`, then use `.venv\Scripts\python.exe -m pip install -e .\third_party\sam3`. |
-| `No module named 'einops'` / `pycocotools` / `psutil` | Missing runtime dependencies | Run `pip install -r requirements_delivery.txt` using the `.venv` interpreter. |
+| `No module named 'einops'` / `pycocotools` / `psutil` | Missing runtime dependencies | Run `pip install -r requirements.txt` using the `.venv` interpreter. |
 | `No module named 'triton'` | Windows Triton wheel missing | Install the `triton-windows` version compatible with installed PyTorch. |
 | `torch.cuda.is_available()` is `False` | Missing driver, no NVIDIA GPU, or CPU PyTorch wheel | Check `nvidia-smi`, installed torch/CUDA build, and GPU support. |
 | CUDA / Triton kernel error | CUDA/PyTorch/Triton/driver mismatch | Reconcile the version matrix; avoid arbitrary upgrades. |
@@ -271,7 +271,7 @@ When reporting a problem, provide the full error message, Windows version, GPU n
 nvidia-smi
 ```
 
-The sender should retain a matching `installed_packages.txt` (from the **working development environment**) and the exact SAM 3 source revision. `requirements_delivery.txt` lists direct/known runtime requirements; it is **not** a byte-for-byte lockfile of every transitive dependency. To reproduce the precise development environment, use the exported version inventory and ensure the recipient hardware is compatible.
+The sender should retain a matching `installed_packages.txt` (from the **working development environment**) and the exact SAM 3 source revision. `requirements.txt` lists direct/known runtime requirements; it is **not** a byte-for-byte lockfile of every transitive dependency. To reproduce the precise development environment, use the exported version inventory and ensure the recipient hardware is compatible.
 
 ### Third-party notices
 
